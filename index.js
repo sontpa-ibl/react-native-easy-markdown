@@ -115,12 +115,16 @@ class Markdown extends Component {
 
         if (ordered) {
             return(
-                <Text key={'listBullet_' + index} style={styles.listItemNumber}>{index + 1 + '.'}</Text>
+                <View key={'listBullet_' + index} style={styles.listItemNumber}>
+                    <Text>{index + 1 + '.'}</Text>
+                </View>
             );
         }
 
         return(
-            <View key={'listBullet_' + index} style={styles.listItemBullet}/>
+            <View key={'listBullet_' + index} style={styles.listItemBullet}>
+                <Text>{'\u2022'}</Text>
+            </View>
         );
     }
 
@@ -132,19 +136,23 @@ class Markdown extends Component {
 
         if (Utils.isTextOnly(children)) {
             return(
-                <View style={styles.listItem} key={'listItem_' + key}>
-                    {this.props.renderListBullet ? this.props.renderListBullet(extras.ordered, index) : this.renderListBullet(extras.ordered, index)}
-                    <Text key={'listItemContent_' + key} style={[styles.listItemContent, styles.listItemTextContent]}>
-                        {children}
-                    </Text>
+                <View style={{flexDirection: 'column', alignItems: 'flex-start'}} key={'listItem_' + key}>
+                    <View style={styles.listItem}>
+                        {this.props.renderListBullet ? this.props.renderListBullet(extras.ordered, index) : this.renderListBullet(extras.ordered, index)}
+                        <View key={'listItemContent_' + key} style={[styles.listItemContent, styles.listItemTextContent]}>
+                            <Text>{children}</Text>
+                        </View>
+                    </View>
                 </View>
             );
         } else {
             return(
-                <View style={styles.listItem} key={'listItem_' + key}>
-                    {this.props.renderListBullet ? this.props.renderListBullet(extras.ordered, index) : this.renderListBullet(extras.ordered, index)}
-                    <View key={'listItemContent_' + key} style={styles.listItemContent}>
-                        {children}
+                <View style={{flexDirection: 'column', alignItems: 'flex-start'}}>
+                    <View style={styles.listItem} key={'listItem_' + key}>
+                        {this.props.renderListBullet ? this.props.renderListBullet(extras.ordered, index) : this.renderListBullet(extras.ordered, index)}
+                        <View key={'listItemContent_' + key} style={styles.listItemContent}>
+                            <Text>{children}</Text>
+                        </View>
                     </View>
                 </View>
             );

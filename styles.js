@@ -7,36 +7,35 @@ const defaultStyles = {
     blockQuote: {
         borderLeftWidth: 5,
         borderLeftColor: '#aaaaaa',
-        backgroundColor: '#cccccc',
         paddingLeft: 10
     },
     h1: {
-        fontSize: 30,
+        fontSize: 32,
         marginTop: 20,
         marginBottom: 8
     },
     h2: {
-        fontSize: 20,
+        fontSize: 24,
         marginTop: 16,
         marginBottom: 8
     },
     h3: {
-        fontSize: 20,
+        fontSize: 18,
         marginTop: 16,
         marginBottom: 8
     },
     h4: {
-        fontSize: 20,
+        fontSize: 16,
         marginTop: 16,
         marginBottom: 8
     },
     h5: {
-        fontSize: 20,
+        fontSize: 13,
         marginTop: 12,
         marginBottom: 6
     },
     h6: {
-        fontSize: 20,
+        fontSize: 11,
         marginTop: 12,
         marginBottom: 6
     },
@@ -74,22 +73,22 @@ const defaultStyles = {
     listItem: {
         flexDirection: 'row',
         justifyContent: 'flex-start',
-        alignItems: 'center',
+        alignItems: 'flex-start',
         marginVertical: 5,
+        flexWrap: 'wrap',
+        flex: 1
     },
     listItemContent: {
         flexDirection: 'row',
         justifyContent: 'flex-start',
         alignItems: 'flex-start',
+        flex: 1
     },
     listItemTextContent: {
 
     },
     listItemBullet: {
-        width: 4,
-        height: 4,
-        backgroundColor: 'black',
-        borderRadius: 2,
+        width: 6,
         marginRight: 10,
     },
     listItemNumber: {
